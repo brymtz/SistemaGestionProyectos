@@ -16,9 +16,9 @@
                     <img src="../public/images/avatar.svg" alt="Imagen de Usuario">
                       <span class="nav-item">Bienvenido <?php echo $_SESSION['nombre']?></span>
                   </a></li>
-              <li><a href="#">
+              <li><a href="views/../kanbanboard.php">
                       <i class="fas fa-home"></i>
-                      <span class="nav-item">Dashboard</span>
+                      <span class="nav-item">Tablero Kanban</span>
                   </a></li>
               <li><a href="">
                       <i class="fas fa-user"></i>

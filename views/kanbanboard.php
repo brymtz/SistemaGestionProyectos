@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if(empty($_SESSION["id"])){
-        header("location: ../login.php");
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +12,12 @@
   </head>
   <body>
      <div class="container">
-     <?php include '../views/templates/sidebar.php';?>
+     <?php 
+          include '../views/templates/sidebar.php';
+          if(empty($_SESSION["id"])){
+            header("location: ../login.php");
+        }
+     ?>
      <div class="board">
       <div class="lanes">
         <div class="swim-lane" id="todo-lane">
