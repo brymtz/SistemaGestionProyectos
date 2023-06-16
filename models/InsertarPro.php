@@ -3,11 +3,11 @@
 
     include "conexion.php";
 
-    $idPro= $_POST['id'];
+    /*$idPro= $_POST['id'];
     $nomPro= $_POST['nombre'];
     $desPro= $_POST['descripcion'];
     $FeIn= $_POST['fecInipro'];
-    $FeFi= $_POST['fecFinPro'];
+    $FeFi= $_POST['fecFinPro'];*/
 
     $sql = "INSERT INTO proyecto(idPro, nomPro, desPro, fecInipro, fecFinPro) VALUES (:idP, :nomP, :desP, :feIn, :feFi )";
     $sql2 = $pdo->prepare($sql);
