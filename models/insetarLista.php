@@ -8,7 +8,7 @@
 
     $sql = "INSERT INTO lista(idTar, userPer) VALUES (:idTarea, :userPer";
     $sql2 = $pdo->prepare($sql);
-    $sql2->bindParam(':idTarea',$idTarea,PDO::PARAM_STR,25);
+    $sql2->bindParam(':idTarea',$idTarea,PDO::PARAM_INT,25);
     $sql2->bindParam(':userPer',$userPer,PDO::PARAM_STR,25);
 
     $sms="";
