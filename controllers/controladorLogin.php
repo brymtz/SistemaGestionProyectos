@@ -16,9 +16,9 @@ if(!empty($_POST["btnIngresar"])){
             $res->execute();
         
             if( $row = $res->fetch(PDO::FETCH_ASSOC) ){
-                $_SESSION["id"] = $row -> userPer;
-                $_SESSION["nombre"] = $row -> nomPer;
-                $_SESSION["rol"] = $row -> rolPer;
+                $_SESSION['id'] = $row['userPer'];
+                $_SESSION['nombre'] = $row['nomPer'];
+                $_SESSION['rol'] = $row['rolPer'];
                 
                 header("location: views/dashboard.php");
             }else{

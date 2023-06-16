@@ -1,3 +1,10 @@
+  <?php
+  session_start();
+  if(empty($_SESSION["id"])){
+      header("location: ../login.php");
+  }
+  //echo $_SESSION['id'];
+  ?>
   <link rel="stylesheet" href="../../public/css/sidebar.css" />
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -7,7 +14,7 @@
           <ul>
               <li><a href="#" class="logo">
                     <img src="../public/images/avatar.svg" alt="Imagen de Usuario">
-                      <span class="nav-item">Bienvenido</span>
+                      <span class="nav-item">Bienvenido <?php echo $_SESSION['nombre']?></span>
                   </a></li>
               <li><a href="#">
                       <i class="fas fa-home"></i>
@@ -33,7 +40,7 @@
                       <i class="fas fa-cog"></i>
                       <span class="nav-item">Settings</span>
                   </a></li>
-              <li><a href="" class="logout">
+              <li><a href="../controllers/controlLogout.php" class="logout">
                       <i class="fas fa-sign-out-alt"></i>
                       <span class="nav-item">Cerrar Sesión</span>
                   </a></li>
