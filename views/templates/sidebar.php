@@ -7,7 +7,7 @@
           <ul>
               <li><a href="#" class="logo">
                     <img src="../public/images/avatar.svg" alt="Imagen de Usuario">
-                      
+                      <span class="nav-item">Bienvenido</span>
                   </a></li>
               <li><a href="#">
                       <i class="fas fa-home"></i>

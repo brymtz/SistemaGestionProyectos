@@ -9,7 +9,7 @@ $estado = isset($_POST['estado'])? $_POST['estado'] : 'disponible';
 $sql =  "SELECT nomTar FROM tarea WHERE idTar = :idTa && estTa=:estado ";
 
 $html="";
-try {
+
     $res = $pdo->prepare($sql);
     $res->bindParam(':idTa',$id,PDO::PARAM_INT);
     $res->bindParam(':estado',$estado,PDO::PARAM_STR);
@@ -21,8 +21,6 @@ try {
     }
 
     echo json_encode($html);
-} catch (PDOExeption $th) {
-    echo "ERROR " .$th->getMessage();
-}
+
 
 ?>

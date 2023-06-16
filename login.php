@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +26,8 @@
             <img src="public/images/avatar.svg">
             <h2 class="title">BIENVENIDO</h2>
             <?php
-               //include "../backend/controllers/control_login.php";
+               include "models/conexion.php";
+               include "controllers/controladorLogin.php";
             ?>
             <div class="input-div one">
                <div class="i">
