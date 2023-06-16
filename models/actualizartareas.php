@@ -2,26 +2,33 @@
 
     include "conexion.php";
 
-    $id='42';
-    $newEst='42';
+    $id=isset($_REQUEST['id'])? $_REQUEST['id'] : 0;
+    $newEst=isset($_REQUEST['estado'])? $_REQUEST['estado'] : '';
 
-    $sql = "UPDATE tarea set estTa= WHERE idTar=:id ";
+    /*$id=1;
+    $newEst='todo';*/
+
+    $sql = "UPDATE tarea set estTa=:newst WHERE idTar=:id ";
     $sql2 = $pdo->prepare($sql);
     $sql2->bindParam(':id',$id,PDO::PARAM_INT,25);
     $sql2->bindParam(':newst',$newEst,PDO::PARAM_STR,25);
+
+    $sms="";
 
     try {
         
         $sql2->execute();
         $lastInsertId = intval($pdo->lastInsertId());
         if( $sql2 == TRUE ){
-            echo "registro insertado";
+            $sms = "registro actualizado";
             
         }else{
-            echo "registro no insertado";
+            $sms = "registro no actualizado";
             
         }
 
+        
+        echo json_encode ($sms);
 
     } catch ( PDOException $e) {
         echo "Error ". $e->getMessage();
