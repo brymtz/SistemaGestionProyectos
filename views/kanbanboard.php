@@ -14,7 +14,12 @@
 
 
      <div class="container">
-     <?php include '../views/templates/sidebar.php';?>
+     <?php 
+          include '../views/templates/sidebar.php';
+          if(empty($_SESSION["id"])){
+            header("location: ../login.php");
+        }
+     ?>
      <div class="board">
 
       <div class="lanes">
