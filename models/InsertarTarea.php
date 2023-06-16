@@ -9,7 +9,7 @@
     $FeIn= $_POST['fecIniTar'];
     $FeFi= $_POST['fecFinTar'];
 
-    $sql = "INSERT INTO tarea(idTar, nomTar, desTar, fecIniTar, fecFinTar) VALUES (:idT, :nomT, :desT, :feIn, :feFi ";
+    $sql = "INSERT INTO tarea(idTar, nomTar, desTar, fecIniTar, fecFinTar) VALUES (:idT, :nomT, :desT, :feIn, :feFi )";
     $sql2 = $pdo->prepare($sql);
     $sql2->bindParam(':idT',$id,DO::ARAM_STR,25);
     $sql2->bindParam(':nomT',$nomTar,PDO::PARAM_STR,25);
