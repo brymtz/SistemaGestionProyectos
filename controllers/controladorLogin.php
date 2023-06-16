@@ -20,7 +20,7 @@ if(!empty($_POST["btnIngresar"])){
                 $_SESSION['nombre'] = $row['nomPer'];
                 $_SESSION['rol'] = $row['rolPer'];
                 
-                header("location: views/dashboard.php");
+                header("location: views/kanbanboard.php");
             }else{
                 echo "<div class='alert alert-danger' style='color:red;'> Usuario o contraseña incorrectos </div>";
             }
